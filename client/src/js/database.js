@@ -18,7 +18,7 @@ export const putDb = async (content) => {
   const jateDb = await openDB('jate', 1);
   const tx = jateDb.transaction('jate', 'readwrite');
   const store = tx.objectStore('jate');
-  const request = store.put({jate: content})
+  const request = store.put({jate: content}) //do I need to get the current content then append it?
   const result = await request
   console.log('result.value', result);
   return result;
