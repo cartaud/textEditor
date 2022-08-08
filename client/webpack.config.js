@@ -25,20 +25,22 @@ module.exports = () => {
       swDest: 'service-worker.js',
     }), 
     new WebpackPwaManifest({
-        name: 'Just Another Text Editor',
-        short_name: 'JATE',
-        description: 'A text editor that can be run in browser while offline',
-        background_color: '',
-        theme_color: '',
-        start_url: '/',
-        publicPath: '/',
-        icons: [
-            {
-                src: path.resolve('./src/images/logo.png'),
-                size: 96,
-                destination: path.join('assets', 'icons'),
-            },
-        ],
+      fingerprints: false,
+      inject: true,
+      name: 'Just Another Text Editor',
+      short_name: 'JATE',
+      description: 'A text editor that can be run in browser while offline',
+      background_color: '',
+      theme_color: '',
+      start_url: '/',
+      publicPath: '/',
+      icons: [
+          {
+              src: path.resolve('src/images/logo.png'),
+              sizes: [96, 128, 192, 256, 384, 512],
+              destination: path.join('assets', 'icons'),
+          },
+      ],
     }),
     ],
 
